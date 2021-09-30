@@ -40,7 +40,27 @@ const loadDetail = (id) => {
 
 const displayDetail = (product) => {
   console.log(product)
-
+  const productDetail = document.getElementById('productDetail')
+  productDetail.innerHTML = `
+  <div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">${product.title}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+  <div class="text-center">
+  <img src="${product.image}" class="card-img-top w-50" >
+</div>
+  <p> <span class="text-danger">Price:</span> $ ${product.price} </p>
+  <p>  ${product.description} </p>
+  
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    
+  </div>
+</div>
+   `
 
 }
 
