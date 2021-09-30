@@ -23,11 +23,27 @@ const showProducts = (products) => {
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button id="details-btn" class="btn btn-danger" onclick="loadDetail('${product.id}')" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+const loadDetail = (id) => {
+  console.log('clicked', id)
+  const url = `https://fakestoreapi.com/products/${id}`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => displayDetail(data))
+    .catch(err => console.log(err))
+}
+
+const displayDetail = (product) => {
+  console.log(product)
+
+
+}
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
