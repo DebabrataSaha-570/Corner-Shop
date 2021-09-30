@@ -29,6 +29,7 @@ const showProducts = (products) => {
   }
 };
 
+//load single data 
 const loadDetail = (id) => {
   console.log('clicked', id)
   const url = `https://fakestoreapi.com/products/${id}`
@@ -38,6 +39,7 @@ const loadDetail = (id) => {
     .catch(err => console.log(err))
 }
 
+//display single data in a modal 
 const displayDetail = (product) => {
   console.log(product)
   const productDetail = document.getElementById('productDetail')
@@ -72,6 +74,8 @@ const addToCart = (id, price) => {
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 };
+
+// get input value 
 
 const getInputValue = (id) => {
   const element = document.getElementById(id);
