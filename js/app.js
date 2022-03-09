@@ -9,7 +9,7 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    console.log(product)
+    // console.log(product)
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
@@ -84,9 +84,6 @@ const addToCart = (id, price) => {
 const getInputValue = (id) => {
   const element = document.getElementById(id);
   const elementValue = element.innerText;
-  // const element = document.getElementById(id).innerText;
-  console.log('element-', id, elementValue);
-  // const converted = parseInt(element);
   const converted = parseFloat(elementValue);
   return converted;
 };
@@ -99,6 +96,9 @@ const updatePrice = (id, value) => {
   document.getElementById(id).innerText = total.toFixed(2);
   // document.getElementById(id).innerText = Math.round(total);
 };
+
+
+
 
 // set innerText function
 const setInnerText = (id, value) => {
@@ -127,6 +127,14 @@ const updateTotal = () => {
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
+  // const a = getInputValue('price');
+  // const b = getInputValue('delivery-charge')
+  // const c = getInputValue('total-tax')
+  // console.log(a, b, c)
   document.getElementById("total").innerText = grandTotal.toFixed(2);
+
+
+
+
 };
 loadProducts();
